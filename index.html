@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harish Bagde - Full Stack Developer Resume</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 30px 20px;
+    min-height: 100vh;
+}
+
+.resume {
+    width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 50px 60px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    border-bottom: 3px solid #e67e22;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.header-left {
+    flex: 1;
+}
+
+.name {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+}
+
+.role {
+    color: #e67e22;
+    font-weight: 700;
+    margin-top: 5px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.contact {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.9;
+}
+
+.contact a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.contact a:hover {
+    color: #d46a0f;
+}
+
+.profile-photo {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    border: 3px solid #e67e22;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.2);
+}
+
+.section-title {
+    margin-top: 28px;
+    margin-bottom: 18px;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    border-bottom: 3px solid #e67e22;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.summary {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #444;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.experience {
+    display: flex;
+    margin-top: 18px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.timeline {
+    width: 120px;
+    font-size: 12px;
+    color: #333;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    background: #e67e22;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #e67e22;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 24px;
+    width: 2px;
+    height: 65px;
+    background: #e67e22;
+}
+
+.exp-details {
+    flex: 1;
+    font-size: 13px;
+    padding-left: 20px;
+}
+
+.company {
+    color: #e67e22;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.position {
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+ul {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 6px;
+    line-height: 1.65;
+    color: #444;
+    font-size: 13px;
+}
+
+.project-title {
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-top: 18px;
+    font-size: 14px;
+    padding: 8px 12px;
+    background: #fff8f0;
+    border-left: 4px solid #e67e22;
+}
+
+.project-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.65;
+    margin-top: 6px;
+    padding-left: 12px;
+}
+
+.tech-stack {
+    font-size: 12px;
+    color: #666;
+    margin-top: 6px;
+    font-weight: 600;
+    padding-left: 12px;
+}
+
+.tech-stack b {
+    color: #1a1a1a;
+    font-weight: 800;
+}
+
+.tech-stack a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.tech-stack a:hover {
+    text-decoration: underline;
+}
+
+.education {
+    display: flex;
+    margin-top: 18px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.edu-year {
+    width: 120px;
+    font-size: 12px;
+    color: #333;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+    padding-left: 30px;
+}
+
+.edu-year::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    background: #e67e22;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #e67e22;
+}
+
+.edu-year::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 21px;
+    width: 2px;
+    height: 55px;
+    background: #e67e22;
+}
+
+.edu-details {
+    flex: 1;
+    font-size: 13px;
+    padding-left: 20px;
+}
+
+.edu-details b {
+    color: #1a1a1a;
+    font-weight: 800;
+}
+
+.edu-details span {
+    display: block;
+    margin-top: 3px;
+    color: #e67e22;
+    font-weight: 700;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 15px;
+}
+
+.skill-category {
+    font-size: 13px;
+    padding: 12px 14px;
+    background: #fff8f0;
+    border-left: 4px solid #e67e22;
+    border-radius: 2px;
+}
+
+.skill-category b {
+    display: block;
+    color: #e67e22;
+    margin-bottom: 6px;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-category {
+    color: #555;
+    line-height: 1.65;
+}
+
+.orange {
+    color: #e67e22;
+    font-weight: 800;
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .resume {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    a {
+        color: #e67e22;
+    }
+    
+    @page {
+        margin: 0.5in 0.75in;
+        size: A4;
+    }
+    
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    
+    .timeline::before,
+    .timeline::after,
+    .edu-year::before,
+    .edu-year::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="resume">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <div class="name">Harish Bagde</div>
+            <div class="role">Full Stack Developer (MERN)</div>
+            <div class="contact">
+                hbagde424@gmail.com<br>
+                8839475693<br>
+                Bhopal<br>
+                <a href="https://www.linkedin.com/in/harish-bagde-92b2a7225/" target="_blank">LinkedIn Profile</a>
+            </div>
+        </div>
+        <img src="harish_photo.png" alt="Profile Photo" class="profile-photo">
+    </div>
+
+    <!-- Summary -->
+    <div class="section-title">PROFESSIONAL SUMMARY</div>
+    <div class="summary">
+        Proficient in JavaScript, MongoDB, Express.js, React.js, and Node.js with experience in designing and developing scalable web applications and RESTful APIs. Skilled in implementing modern front-end architectures, integrating seamless back-end services, and optimizing database performance using NoSQL solutions. Adept at full-stack development, ensuring efficient client-server communication, and following best practices in software development.
+    </div>
+
+    <!-- Experience -->
+    <div class="section-title">WORK EXPERIENCE</div>
+    
+    <div class="experience">
+        <div class="timeline">
+            July 2025 - Present<br>
+            Bhopal
+        </div>
+        <div class="exp-details">
+            <div class="position">Full Stack Developer</div>
+            <div class="company">Akalp Techno Media Pvt Limited</div>
+            <ul>
+                <li>Develop and maintain full-stack web applications using MongoDB, Express.js, React.js, and Node.js</li>
+                <li>Design and implement RESTful APIs for front-end and back-end integration</li>
+                <li>Build responsive and user-friendly interfaces using React.js</li>
+                <li>Manage and optimize MongoDB databases for performance and scalability</li>
+                <li>Ensure secure authentication, authorization, and data protection</li>
+                <li>Collaborate with team members to deliver project requirements on time</li>
+                <li>Debug, test, and maintain code quality following best practices</li>
+                <li>Deploy and monitor applications on servers/cloud environments</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience">
+        <div class="timeline">
+            June 2022 - May 2025<br>
+        </div>
+        <div class="exp-details">
+            <div class="position">MERN Stack Developer</div>
+            <div class="company">Jinpushp Infotech</div>
+            <ul>
+                <li>Node.js, Express.js, RESTful APIs, MVC Architecture</li>
+                <li>MongoDB, Mongoose, PostgreSQL, MySQL, Redis</li>
+                <li>AWS (EC2, S3, IAM, CloudWatch)</li>
+                <li>Git, GitHub, Postman, Swagger, VS Code</li>
+                <li>JWT, OAuth, Passport.js, RBAC, Input Validation (Joi)</li>
+                <li>API Security, Encryption, Hashing (bcrypt, Crypto)</li>
+                <li>CI/CD (GitHub Actions)</li>
+                <li>Socket.io (Real-time Apps), Third-party API Integration</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section-title">PROJECTS</div>
+
+    <div class="project-title">Election Atlas</div>
+    <div class="project-desc">
+        An election-centric digital platform that provides comprehensive data related to elections. The system follows a hierarchical structure organized by State, Division, Parliament, District, Assembly, Block, and Booth. All data is visually represented through an interactive GIS-based map utilizing polygon layers to display geographical and electoral boundaries effectively.
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> MERN Stack (MongoDB, Express.js, React.js, Node.js), GIS Mapping</div>
+
+    <div class="project-title">Pass Club</div>
+    <div class="project-desc">
+        An advanced, system-based web platform operating on a coin exchange model where users earn and spend digital coins for various services including hotels, spas, gyms, and hospitals. Customers can use services themselves or offer them to others, earning coins through transactions that can be exchanged for other services.
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> ASP.NET, MongoDB, C#</div>
+
+    <div class="project-title">Home Rent</div>
+    <div class="project-desc">
+        A Node.js and React application designed to simplify the process of renting properties. Provides a comprehensive platform for landlords to list properties and tenants to search, book, and manage rentals with features for user authentication, property management, booking management, payment processing, and reviews.
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> Frontend: Angular, Backend: Node.js & React, Authentication: JWT, Database: SQL Server</div>
+
+    <div class="project-title">Gharonda Galleries</div>
+    <div class="project-desc">
+        A real estate property site where houses are sold or rented. Users can list their properties, search for available homes, and connect with buyers or tenants easily.
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> HTML, CSS, JavaScript, Bootstrap, PHP, MySQL | <a href="https://gharondagalleries.com/" target="_blank">Visit Site</a></div>
+
+    <div class="project-title">Wedding Planner</div>
+    <div class="project-desc">
+        A Node.js application designed to help couples plan their wedding efficiently. Provides features to manage tasks, guests, budget, vendors, and more in one centralized platform.
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> Angular, Node.js, Express, MongoDB, Mongoose</div>
+
+    <div class="project-title">University Degree Generator</div>
+    <div class="project-desc">
+        A system for creating college degrees that can be printed for all university students. Developed using PHP language for RGPV (Rajiv Gandhi Proudyogiki Vishwavidyalaya).
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> PHP</div>
+
+    <!-- Skills -->
+    <div class="section-title">TECHNICAL SKILLS</div>
+    <div class="skills-grid">
+        <div class="skill-category">
+            <b>Backend Development</b>
+            Node.js + Express.js, ASP.NET Core (Web API, MVC), RESTful APIs / GraphQL, JWT/OAuth
+        </div>
+        <div class="skill-category">
+            <b>Frontend Development</b>
+            HTML5, CSS3, JavaScript, React.js, Angular, Bootstrap, Tailwind, TypeScript
+        </div>
+        <div class="skill-category">
+            <b>Databases</b>
+            MongoDB + Mongoose, PostgreSQL, MySQL, SQL Server
+        </div>
+        <div class="skill-category">
+            <b>Tools & Platforms</b>
+            Git/GitHub, Visual Studio, VS Code, Postman, Swagger, AWS (EC2, S3, IAM, CloudWatch)
+        </div>
+        <div class="skill-category">
+            <b>Security & Authentication</b>
+            JWT, OAuth, Passport.js, RBAC, Input Validation (Joi), Encryption, Hashing (bcrypt, Crypto)
+        </div>
+        <!-- <div class="skill-category">
+            <b>DevOps & Real-time</b>
+            CI/CD (GitHub Actions), Socket.io, Third-party API Integration
+        </div> -->
+        <div class="skill-category">
+            <b>Data Analysis</b>
+            Python, Pandas, Matplotlib, NumPy, Seaborn, Excel
+        </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section-title">EDUCATION</div>
+
+    <div class="education">
+        <div class="edu-year">
+            2022
+        </div>
+        <div class="edu-details">
+            <b>MCA</b><br>
+            <span class="orange">University Institute of Technology, RGPV</span><br>
+            <span style="color:#666;">GPA: 8.2</span>
+        </div>
+    </div>
+
+    <div class="education">
+        <div class="edu-year">
+            2020
+        </div>
+        <div class="edu-details">
+            <b>B.Sc</b><br>
+            <span class="orange">Unique College Bhopal</span><br>
+            <span style="color:#666;">GPA: 6.6</span>
+        </div>
+    </div>
+
+    <div class="education">
+        <div class="edu-year">
+            2014
+        </div>
+        <div class="edu-details">
+            <b>12th</b><br>
+            <span class="orange">Gov. Boys H.S School Kotra Sultanabad Bhopal</span><br>
+            <span style="color:#666;">Percentage: 66.4%</span>
+        </div>
+    </div>
+
+    <div class="education">
+        <div class="edu-year">
+            2012
+        </div>
+        <div class="edu-details">
+            <b>10th</b><br>
+            <span class="orange">Gov. Boys H.S School Kotra Sultanabad Bhopal</span><br>
+            <span style="color:#666;">GPA: 72.66</span>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
