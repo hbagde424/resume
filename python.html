@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harish Bagde - Full Stack Developer Resume</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 30px 20px;
+    min-height: 100vh;
+}
+
+.resume {
+    width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 50px 60px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    border-bottom: 3px solid #e67e22;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.header-left {
+    flex: 1;
+}
+
+.name {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -1px;
+    margin-bottom: 5px;
+}
+
+.role {
+    color: #e67e22;
+    font-weight: 700;
+    margin-top: 5px;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.contact {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.9;
+}
+
+.contact a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.contact a:hover {
+    color: #d46a0f;
+}
+
+.profile-photo {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    /* border: 3px solid #e67e22; */
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(230, 126, 34, 0.2);
+}
+
+.section-title {
+    margin-top: 28px;
+    margin-bottom: 18px;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    border-bottom: 3px solid #e67e22;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.summary {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #444;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.experience {
+    display: flex;
+    margin-top: 18px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.timeline {
+    width: 120px;
+    font-size: 12px;
+    color: #333;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    background: #e67e22;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #e67e22;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 24px;
+    width: 2px;
+    height: 65px;
+    background: #e67e22;
+}
+
+.exp-details {
+    flex: 1;
+    font-size: 13px;
+    padding-left: 20px;
+}
+
+.company {
+    color: #e67e22;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.position {
+    font-weight: 800;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+ul {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 6px;
+    line-height: 1.65;
+    color: #444;
+    font-size: 13px;
+}
+
+.project-title {
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-top: 18px;
+    font-size: 14px;
+    padding: 8px 12px;
+    background: #fff8f0;
+    border-left: 4px solid #e67e22;
+}
+
+.project-desc {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.65;
+    margin-top: 6px;
+    padding-left: 12px;
+}
+
+.tech-stack {
+    font-size: 12px;
+    color: #666;
+    margin-top: 6px;
+    font-weight: 600;
+    padding-left: 12px;
+}
+
+.tech-stack b {
+    color: #1a1a1a;
+    font-weight: 800;
+}
+
+.tech-stack a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.tech-stack a:hover {
+    text-decoration: underline;
+}
+
+.education {
+    display: flex;
+    margin-top: 18px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.edu-year {
+    width: 120px;
+    font-size: 12px;
+    color: #333;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+    padding-left: 30px;
+}
+
+.edu-year::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    background: #e67e22;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #e67e22;
+}
+
+.edu-year::after {
+    content: '';
+    position: absolute;
+    left: 14px;
+    top: 21px;
+    width: 2px;
+    height: 55px;
+    background: #e67e22;
+}
+
+.edu-details {
+    flex: 1;
+    font-size: 13px;
+    padding-left: 20px;
+}
+
+.edu-details b {
+    color: #1a1a1a;
+    font-weight: 800;
+}
+
+.edu-details span {
+    display: block;
+    margin-top: 3px;
+    color: #e67e22;
+    font-weight: 700;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 15px;
+}
+
+.skill-category {
+    font-size: 13px;
+    padding: 12px 14px;
+    background: #fff8f0;
+    border-left: 4px solid #e67e22;
+    border-radius: 2px;
+}
+
+.skill-category b {
+    display: block;
+    color: #e67e22;
+    margin-bottom: 6px;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-category {
+    color: #555;
+    line-height: 1.65;
+}
+
+.orange {
+    color: #e67e22;
+    font-weight: 800;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th {
+    background: #fff8f0;
+    color: #1a1a1a;
+    font-weight: 800;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #e67e22;
+    font-size: 13px;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid #e8e8e8;
+    font-size: 13px;
+    color: #555;
+}
+
+table tr:hover {
+    background: #fafafa;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .resume {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    
+    a {
+        color: #e67e22;
+    }
+    
+    @page {
+        margin: 0.5in 0.75in;
+        size: A4;
+    }
+    
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+    
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .timeline::before,
+    .timeline::after,
+    .edu-year::before,
+    .edu-year::after {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    .section-title {
+        border-bottom-color: #e67e22 !important;
+    }
+    
+    .skill-category {
+        background: #fff8f0 !important;
+        border-left-color: #e67e22 !important;
+    }
+    
+    .skill-category b {
+        color: #e67e22 !important;
+    }
+    
+    table th {
+        background: #fff8f0 !important;
+        border-bottom-color: #e67e22 !important;
+    }
+    
+    .project-title {
+        background: #fff8f0 !important;
+        border-left-color: #e67e22 !important;
+    }
+    
+    .header {
+        border-bottom-color: #e67e22 !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="resume">
+
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <div class="name">Harish Bagde</div>
+            <div class="role">Full Stack Engineer (Python | Django | Flask)</div>
+            <div class="contact">
+                📧 hbagde424@gmail.com<br>
+                📱 8839475693<br>
+                📍 Mumbai<br>
+                🔗 <a href="https://www.linkedin.com/in/harish-bagde-92b2a7225/" target="_blank">https://www.linkedin.com/in/harish-bagde-92b2a7225/</a>
+            </div>
+        </div>
+        <img src="harish_photo.png" alt="Profile Photo" class="profile-photo">
+    </div>
+
+    <!-- Summary -->
+    <div class="section-title">PROFESSIONAL SUMMARY</div>
+    <div class="summary">
+        Experienced Full Stack Engineer with 3+ years of expertise in Python, Django, and Flask frameworks. Proficient in designing and developing scalable web applications, RESTful APIs, and database management systems including PostgreSQL and MySQL. Skilled in front-end technologies (HTML, CSS, JavaScript) and cloud deployment strategies. Adept at independent problem-solving, team collaboration, and implementing best practices in software development. Proven ability to work in agile environments and deliver efficient, effective solutions that enhance client services.
+    </div>
+
+    <!-- Education -->
+    <div class="section-title">EDUCATION</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Degree</th>
+                <th>Institution</th>
+                <th>Year</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>MCA</b></td>
+                <td><span class="orange">University Institute of Technology, RGPV</span></td>
+                <td>2022</td>
+                <td>8.2 GPA</td>
+            </tr>
+            <tr>
+                <td><b>B.Sc</b></td>
+                <td><span class="orange">Unique College Bhopal</span></td>
+                <td>2020</td>
+                <td>6.6 GPA</td>
+            </tr>
+            <tr>
+                <td><b>12th</b></td>
+                <td><span class="orange">Gov. Boys H.S School Kotra Sultanabad Bhopal</span></td>
+                <td>2014</td>
+                <td>66.4%</td>
+            </tr>
+            <tr>
+                <td><b>10th</b></td>
+                <td><span class="orange">Gov. Boys H.S School Kotra Sultanabad Bhopal</span></td>
+                <td>2012</td>
+                <td>72.66 GPA</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Experience -->
+    <div class="section-title">WORK EXPERIENCE</div>
+    
+    <div class="experience">
+        <div class="timeline">
+            July 2025 - Present<br>
+            Mumbai
+        </div>
+        <div class="exp-details">
+            <div class="position">Full Stack Engineer</div>
+            <div class="company">Akalp Techno Media Pvt Limited</div>
+            <ul>
+                <li>Develop and maintain full-stack web applications using Python, Django, and Flask frameworks</li>
+                <li>Design and implement RESTful APIs for seamless front-end and back-end integration</li>
+                <li>Build responsive and user-friendly interfaces using HTML, CSS, and JavaScript</li>
+                <li>Manage and optimize PostgreSQL and MySQL databases for performance and scalability</li>
+                <li>Implement cloud deployment strategies and manage cloud services</li>
+                <li>Ensure secure authentication, authorization, and data protection</li>
+                <li>Collaborate with cross-functional teams to deliver project requirements on time</li>
+                <li>Conduct code reviews to ensure quality and adherence to best practices</li>
+                <li>Work independently and become a Subject Matter Expert (SME) in assigned areas</li>
+                <li>Participate actively in team discussions and provide solutions to work-related problems</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience">
+        <div class="timeline">
+            June 2022 - May 2025<br>
+        </div>
+        <div class="exp-details">
+            <div class="position">Backend Developer (Python & Web Frameworks)</div>
+            <div class="company">Jinpushp Infotech</div>
+            <ul>
+                <li>Python, Django, Flask, RESTful APIs, MVC Architecture</li>
+                <li>PostgreSQL, MySQL, Database Optimization, Query Performance</li>
+                <li>HTML5, CSS3, JavaScript, Front-end Integration</li>
+                <li>AWS (EC2, S3, IAM, CloudWatch), Cloud Deployment</li>
+                <li>Git, GitHub, Postman, Swagger, VS Code</li>
+                <li>JWT, OAuth, Passport.js, RBAC, Input Validation</li>
+                <li>API Security, Encryption, Hashing (bcrypt, Crypto)</li>
+                <li>Agile Development, CI/CD Pipelines</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section-title">PROJECTS</div>
+
+    <div class="project-title">Election Atlas</div>
+    <div class="project-desc">
+        An election-centric digital platform providing comprehensive electoral data. Built with Python backend, Django framework, and PostgreSQL database. Features hierarchical data organization by State, Division, Parliament, District, Assembly, Block, and Booth with interactive GIS-based mapping using polygon layers.
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> Python, Django, PostgreSQL, HTML5, CSS3, JavaScript, GIS Mapping</div>
+
+    <div class="project-title">Pass Club</div>
+    <div class="project-desc">
+        A system-based web platform operating on a coin exchange model. Users earn and spend digital coins for various services including hotels, spas, gyms, and hospitals. Developed with Python backend, Flask framework, and MySQL database for transaction management and service exchange.
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> Python, Flask, MySQL, HTML5, CSS3, JavaScript</div>
+
+    <div class="project-title">Home Rent</div>
+    <div class="project-desc">
+        A comprehensive property rental platform simplifying the renting process. Features user authentication, property management, booking management, payment processing, and reviews. Built with Python backend, Django framework, and PostgreSQL database for robust data management.
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> Frontend: HTML5, CSS3, JavaScript; Backend: Python, Django; Database: PostgreSQL; Authentication: JWT</div>
+
+    <div class="project-title">Gharonda Galleries</div>
+    <div class="project-desc">
+        A real estate property platform for buying and renting houses. Users can list properties, search for available homes, and connect with buyers or tenants. Built with Python backend and MySQL database for efficient property management.
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> HTML5, CSS3, JavaScript, Bootstrap, Python, MySQL | <a href="https://gharondagalleries.com/" target="_blank">Visit Site</a></div>
+
+    <div class="project-title">Wedding Planner</div>
+    <div class="project-desc">
+        A comprehensive wedding planning application helping couples manage tasks, guests, budget, vendors, and more in one centralized platform. Developed using Python backend with Flask framework and PostgreSQL database.
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> Frontend: HTML5, CSS3, JavaScript; Backend: Python, Flask; Database: PostgreSQL</div>
+
+    <div class="project-title">University Degree Generator</div>
+    <div class="project-desc">
+        A system for creating and printing college degrees for all university students. Developed using Python for RGPV (Rajiv Gandhi Proudyogiki Vishwavidyalaya) with database management for student records.
+    </div>
+    <div class="tech-stack"><b>Tech Stack:</b> Python, MySQL</div>
+
+    <!-- Job Opportunity -->
+    <div class="section-title">JOB OPPORTUNITY - FULL STACK ENGINEER</div>
+    
+    <div class="project-title">Position Overview</div>
+    <div class="project-desc">
+        As a Full Stack Engineer, you will be responsible for developing and engineering end-to-end features of a system. Collaborate with cross-functional teams to design user experiences, write backend code, and utilize innovative technologies to deliver solutions that enhance client services.
+    </div>
+
+    <div class="project-title">Key Responsibilities</div>
+    <ul style="margin-left: 12px;">
+        <li>Perform independently and become a Subject Matter Expert (SME)</li>
+        <li>Actively participate and contribute in team discussions</li>
+        <li>Provide solutions to work-related problems</li>
+        <li>Collaborate with team members to design and implement new features</li>
+        <li>Conduct code reviews to ensure quality and adherence to best practices</li>
+        <li>Engage in problem-solving activities ensuring efficient and effective systems</li>
+        <li>Maintain a cloud-first and agile approach to development</li>
+    </ul>
+
+    <div class="project-title">Required Technical Skills</div>
+    <ul style="margin-left: 12px;">
+        <li><b>Must Have:</b> Proficiency in Python (Programming Language)</li>
+        <li>Strong understanding of web development frameworks (Django or Flask)</li>
+        <li>Experience with front-end technologies (HTML, CSS, JavaScript)</li>
+        <li>Familiarity with database management systems (MySQL or PostgreSQL)</li>
+        <li>Knowledge of cloud services and deployment strategies</li>
+    </ul>
+
+    <div class="project-title">Key Skills Required</div>
+    <ul style="margin-left: 12px;">
+        <li>Backend Development</li>
+        <li>Front-end Development</li>
+        <li>PostgreSQL & MySQL</li>
+        <li>Web Development</li>
+        <li>JavaScript</li>
+        <li>Agile Methodology</li>
+        <li>Programming</li>
+        <li>HTML</li>
+        <li>Python</li>
+    </ul>
+
+   
+
+    <!-- Skills -->
+    <div class="section-title">TECHNICAL SKILLS</div>
+    <div class="skills-grid">
+        <div class="skill-category">
+            <b>Backend Development</b>
+            Python, Django, Flask, RESTful APIs, MVC Architecture, Web Frameworks
+        </div>
+        <div class="skill-category">
+            <b>Frontend Development</b>
+            HTML5, CSS3, JavaScript, Bootstrap, Responsive Design, User Interface
+        </div>
+        <div class="skill-category">
+            <b>Databases</b>
+            PostgreSQL, MySQL, Database Optimization, Query Performance, Data Management
+        </div>
+        <div class="skill-category">
+            <b>Cloud & Deployment</b>
+            AWS (EC2, S3, IAM, CloudWatch), Cloud Services, Deployment Strategies, CI/CD
+        </div>
+        <div class="skill-category">
+            <b>Security & Authentication</b>
+            JWT, OAuth, RBAC, Input Validation, Encryption, Hashing (bcrypt, Crypto), API Security
+        </div>
+        <div class="skill-category">
+            <b>Tools & Platforms</b>
+            Git/GitHub, Visual Studio Code, Postman, Swagger, Agile Methodology
+        </div>
+    </div>
+
+
+
+</div>
+
+</body>
+</html>
